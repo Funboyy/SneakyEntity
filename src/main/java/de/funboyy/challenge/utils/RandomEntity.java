@@ -19,8 +19,6 @@ public class RandomEntity {
 
     private static final List<EntityType> BLOCKED_ENTITIES = Arrays.asList(
             EntityType.LLAMA_SPIT,
-            EntityType.MINECART_MOB_SPAWNER,
-            EntityType.MINECART_COMMAND,
             EntityType.EVOKER_FANGS,
             EntityType.SHULKER_BULLET,
             EntityType.SPECTRAL_ARROW,
@@ -31,7 +29,8 @@ public class RandomEntity {
             EntityType.EGG,
             EntityType.AREA_EFFECT_CLOUD,
             EntityType.PAINTING,
-            EntityType.TRIDENT
+            EntityType.TRIDENT,
+            EntityType.BOAT
     );
 
     private static boolean isEntity(final EntityType type) {
@@ -48,6 +47,10 @@ public class RandomEntity {
         }
 
         if (type.name().contains("ENDER_")) {
+            return false;
+        }
+
+        if (type.name().contains("MINECART")) {
             return false;
         }
 
